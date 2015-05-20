@@ -1,6 +1,6 @@
 {
   "name": "htjs",
-  "version": "1.0.0-dev",
+  "version": "1.0.0",
   "description": "A simple internal DSL for constructing HTML with JS",
   "main": "index.js",
   "scripts": {
