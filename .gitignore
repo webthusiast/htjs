@@ -1,0 +1,4 @@
+*.swp
+/demo.browserified.js
+/index.js
+/node_modules/
