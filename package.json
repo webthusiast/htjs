@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepublish": "make",
+    "start": "python -m SimpleHTTPServer",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

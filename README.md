@@ -4,6 +4,17 @@
 A simple internal DSL for constructing HTML with JS.
 
 
+Demo
+----
+
+Clone from git, execute
+
+	$ npm install
+	$ npm start
+
+... and navigate to [http://localhost:8000/demo.html]().
+
+
 Usage
 -----
 
