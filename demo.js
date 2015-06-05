@@ -8,7 +8,7 @@ var form = $('form', {method: 'POST', action: '.'}, [
 	$('div', {}, [
 		$(null, 'Fill out this form'),
 	]),
-	$('hr'),
+	$('hr', {hidden: null}),
 	inputs,
 ]);
 window.addEventListener('DOMContentLoaded', function(event) {

@@ -6,7 +6,7 @@ module.exports = (tagName, attributes={}, childNodes=[]) ->
 		# return an element node
 		result = document.createElement tagName
 		Object.keys(attributes).forEach (key) ->
-			result.setAttribute key, attributes[key]
+			result.setAttribute key, attributes[key] if attributes[key]?
 		childNodes.forEach (el) ->
 			result.appendChild el
 		result
