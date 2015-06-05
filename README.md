@@ -29,3 +29,13 @@ And
 		htjs('input', {type: 'submit'}),
 	]);
 	element.appendChild(form);
+
+Coffeescript gives you a more readable layout:
+
+	$ = require 'htjs'
+	documentFragment = $ [
+		$ null, 'a text node'
+		$ 'div', [
+			$ 'div' # an empty div
+		]
+	]
