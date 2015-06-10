@@ -10,6 +10,7 @@ var form = $('form', {method: 'POST', action: '.'}, [
 	]),
 	$('hr', {hidden: null}),
 	inputs,
+	$('div', {}, 'Thank you!'),
 ]);
 window.addEventListener('DOMContentLoaded', function(event) {
 	document.body.appendChild(form);

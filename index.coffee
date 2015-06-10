@@ -1,4 +1,4 @@
-module.exports = (tagName, attributes={}, childNodes=[]) ->
+module.exports = htjs = (tagName, attributes={}, childNodes=[]) ->
 	if not tagName?
 		# return a text node
 		document.createTextNode attributes
@@ -7,6 +7,7 @@ module.exports = (tagName, attributes={}, childNodes=[]) ->
 		result = document.createElement tagName
 		Object.keys(attributes).forEach (key) ->
 			result.setAttribute key, attributes[key] if attributes[key]?
+		childNodes = [htjs null, childNodes] if typeof childNodes is 'string'
 		childNodes.forEach (el) ->
 			result.appendChild el
 		result
