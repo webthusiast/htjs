@@ -5,12 +5,12 @@ var inputs = $([
 	$('input', {type: 'submit'}),
 ]);
 var form = $('form', {method: 'POST', action: '.'}, [
-	$('div', {}, [
+	$('div', [
 		$(null, 'Fill out this form'),
 	]),
 	$('hr', {hidden: null}),
 	inputs,
-	$('div', {}, 'Thank you!'),
+	$('div', 'Thank you!'),
 ]);
 window.addEventListener('DOMContentLoaded', function(event) {
 	document.body.appendChild(form);

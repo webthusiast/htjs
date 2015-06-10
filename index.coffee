@@ -4,6 +4,8 @@ module.exports = htjs = (tagName, attributes={}, childNodes=[]) ->
 		document.createTextNode attributes
 	else if typeof tagName is 'string'
 		# return an element node
+		if typeof attributes == 'string' or attributes instanceof Array
+			return htjs tagName, {}, attributes
 		result = document.createElement tagName
 		Object.keys(attributes).forEach (key) ->
 			result.setAttribute key, attributes[key] if attributes[key]?
