@@ -16,4 +16,5 @@ window.addEventListener('DOMContentLoaded', function(event) {
 	document.body.appendChild(form);
 	var input = form.querySelector('input[name="username"]');
 	$(input, {value: 'webthusiast'});
+	$(form.firstElementChild, 'Please fill out this form');
 });

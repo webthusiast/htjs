@@ -12,6 +12,7 @@ module.exports = $ = (element, attributes={}, childNodes=[]) ->
 			if attributes[key]? then element.setAttribute key, attributes[key]
 			else element.removeAttribute key
 		childNodes = [$ null, childNodes] if typeof childNodes is 'string'
+		element.removeChild x while x = element.firstChild
 		childNodes.forEach (childNode) ->
 			element.appendChild childNode
 		element
