@@ -14,4 +14,6 @@ var form = $('form', {method: 'POST', action: '.'}, [
 ]);
 window.addEventListener('DOMContentLoaded', function(event) {
 	document.body.appendChild(form);
+	var input = form.querySelector('input[name="username"]');
+	$(input, {value: 'webthusiast'});
 });

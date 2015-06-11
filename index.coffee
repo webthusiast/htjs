@@ -1,22 +1,24 @@
-module.exports = htjs = (tagName, attributes={}, childNodes=[]) ->
-	if not tagName?
+module.exports = $ = (element, attributes={}, childNodes=[]) ->
+	if not element?
 		# return a text node
 		document.createTextNode attributes
-	else if typeof tagName is 'string'
+	else if typeof element is 'string'
+		$ document.createElement(element), attributes, childNodes
+	else if element instanceof HTMLElement
 		# return an element node
 		if typeof attributes == 'string' or attributes instanceof Array
-			return htjs tagName, {}, attributes
-		result = document.createElement tagName
+			return $ element, {}, attributes
 		Object.keys(attributes).forEach (key) ->
-			result.setAttribute key, attributes[key] if attributes[key]?
-		childNodes = [htjs null, childNodes] if typeof childNodes is 'string'
-		childNodes.forEach (el) ->
-			result.appendChild el
-		result
-	else
-		# return an document fragment
-		childNodes = tagName
+			if attributes[key]? then element.setAttribute key, attributes[key]
+			else element.removeAttribute key
+		childNodes = [$ null, childNodes] if typeof childNodes is 'string'
+		childNodes.forEach (childNode) ->
+			element.appendChild childNode
+		element
+	else if element instanceof Array
+		# return a document fragment
+		childNodes = element
 		result = document.createDocumentFragment()
-		childNodes.forEach (el) ->
-			result.appendChild el
+		childNodes.forEach (childNode) ->
+			result.appendChild childNode
 		result
